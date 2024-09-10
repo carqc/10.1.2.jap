@@ -42,5 +42,7 @@ function depurar (item){
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  showList(strangeArray.filter(depurar).sort());
+  showList(strangeArray.filter(depurar).sort(function sameCase (a, b) {
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  }));
 });
